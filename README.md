@@ -46,3 +46,7 @@ I highly recommend reading this PDF starting on page 1 (or 10 in the PDF file). 
 If you want to learn more about the computer itself then this manual will do you well.
 
 [TRS80-M100-User-Guide](https://ftp.whtech.com/club100/doc/TRS80-M100-User-Guide.pdf)
+
+## More
+More resources on this topic can be found by using the search feature on this site.<br>
+https://discover.dtic.mil/
