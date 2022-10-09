@@ -3,7 +3,7 @@
 40      190     ' X=INT(M0*X+.5)/M0
 50      210     ' P=129.04398/T-.40758+.645765438E-3*T
 60      230     ' P=2.7412979/T-.32774624-3*T
-70      250     ' Get keypress
+70      250     ' Get keypress capitalized
 120     340     ' Print options menu
 185     460     ' Check if GRI has been set, if not then go set it
 190     470     ' Enter 1st GRI
