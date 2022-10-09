@@ -52,6 +52,9 @@ If you want to learn more about the computer itself then this manual will do you
 More resources on this topic can be found by using the search feature on this site.<br>
 https://discover.dtic.mil/
 
+Preprocessor for TRS-80 BASIC that implements labels for GOTO/GOSUB jumps.<br>
+https://github.com/Auios/Labeled-Basic-Preprocessor
+
 ### Acronyms
 * TD: Time Delay OR Time Difference
 * ASF: Additional Secondary Factor
