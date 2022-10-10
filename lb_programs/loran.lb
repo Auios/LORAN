@@ -10,10 +10,14 @@ G$(1)=""
 
 GOTO @PRINT_OPTIONS
 
+@DEBUG
+    PRINT "DEBUG":STOP
+    RETURN
+
 @PRESS_ANY_KEY
-    FOR C=1 TO 9
-        C$=INKEY$
-    NEXT C
+    ' FOR C=1 TO 9
+    '     C$=INKEY$
+    ' NEXT C
     PRINT
     PRINT "Press any key to continue."
 
