@@ -1,49 +1,45 @@
-32      110     ' Something before "Press any key to continue."
-34      160     ' Get keypress
-40      190     ' X=INT(M0*X+.5)/M0
-50      210     ' P=129.04398/T-.40758+.645765438E-3*T
-60      230     ' P=2.7412979/T-.32774624-3*T
-70      250     ' Get keypress capitalized
-120     340     ' Print options menu
-185     460     ' Check if GRI has been set, if not then go set it
-190     470     ' Enter 1st GRI
-210     540     ' Enter 2nd GRI
-250     620     ' Set F1|F2 depending on P(x,y) and L(x,y).
-                ' Continue to "Working" if pass.
-                ' Else "ERROR NO TRIPLET"
-300     720     ' "ERROR NO TRIPLET."
-310     760     ' "Working"
-330     880     ' Setup variables
-340     920     ' Math // IF T>=537 THEN GOSUB 50 , IF T<537 THEN GOSUB 60
-380     970     ' Parse GRI
-390     1030    ' Read DATA - Reset read
-400     1050    ' Read DATA - Get information about chain
-450     1130    ' Increment index variable for chain towers array
-460     1150    ' Error: Chain not found - PRINT I$;" IS NOT CATALOGED"
-470     1190    ' For each tower, GOTO 1240
-490     1240    ' If N = 1|2 then set G$(1|2) to equal the GRI? Setup other variables
-530     1420    ' Exit program
-550     1440    ' Direct Solution - Set Z8, Z9, P8, P9, M, C1, C2, D, P, N, YY,
-                ' XX, (MOD), S1, D0, U, W, V, X, Y, S2, S8, S9, K, P2,
-                ' YY, XX, (MOD), S3, H, L2, YY, XX, (MOD), Z2
-650     1810    ' Reverse Solution
-770     2330    ' Fixing routine - Calls 1440
-910     2830    ' Options 1 - Enter ITDs
-940     2920    ' ITD is valid, cont
-950     2980    ' Option 2 - Set A0
-970     3010    ' Cont. A0 to fixing routine
-990     3050    ' Options 6 - Print origin lat/lon
-1010    3170    ' Print dest lat/lon
-1040    3280    ' Option 4
-1090    3460    ' Option 5
-1170    3740    ' Input lat/lon
-1200    3850    ' Option 7
-1250    4080    ' MOD FCTN (Setup?)
-1260    4100    ' MOD FCTN - Uses variables from
-1270    4130    ' [QATN] - X=ATN((1-C0)*TAN(X))
-1280    4150    ' Build string?
-1320    4300    ' Print ASF
-1340    4360    ' Math - Set ZZ and AN
-1350    4400    ' ASIN - AN=ATN(SQR(1-XX*XX)/(XX-1E-9*(XX=0)))-PI*(XX<0)
-1360    4430    ' ACOS - Set S, X, H, M0, (MOD Setup), V, X, (MOD Setup), V
-1370    4530    ' X = ACOS(V)*RD, [QATN]
+32      ' Something before "Press any key to continue."
+34      ' Get keypress
+40      ' X=INT(M0*X+.5)/M0
+50      ' P=129.04398/T-.40758+.645765438E-3*T
+60      ' P=2.7412979/T-.32774624-3*T
+70      ' Get keypress capitalized
+120     ' Print options menu
+185     ' Check if GRI has been set, if not then go set it
+190     ' Enter 1st GRI
+210     ' Enter 2nd GRI
+250     ' Set F1|F2 depending on P(x,y) and L(x,y)    ' Continue to "Working" if pass    ' Else "ERROR NO TRIPLET"
+300     ' "ERROR NO TRIPLET."
+310     ' "Working"
+330     ' Setup variables
+340     ' Math // IF T>=537 THEN GOSUB 50 , IF T<537 THEN GOSUB 60
+380     ' Parse GRI
+390     ' Read DATA - Reset read
+400     ' Read DATA - Get information about chain
+450     ' Increment index variable for chain towers array
+460     ' Error: Chain not found - PRINT I$;" IS NOT CATALOGED"
+470     ' For each tower, GOTO 1240
+490     ' If N = 1|2 then set G$(1|2) to equal the GRI? Setup other variables
+530     ' Exit program
+550     ' Direct Solution - Set Z8, Z9, P8, P9, M, C1, C2, D, P, N, YY    ' XX, (MOD), S1, D0, U, W, V, X, Y, S2, S8, S9, K, P2    ' YY, XX, (MOD), S3, H, L2, YY, XX, (MOD), Z2
+650     ' Reverse Solution
+770     ' Fixing routine - Calls 1440
+910     ' Options 1 - Enter ITDs
+940     ' ITD is valid, cont
+950     ' Option 2 - Set A0
+970     ' Cont. A0 to fixing routine
+990     ' Options 6 - Print origin lat/lon
+1010    ' Print dest lat/lon
+1040    ' Option 4
+1090    ' Option 5
+1170    ' Input lat/lon
+1200    ' Option 7
+1250    ' MOD FCTN (Setup?)
+1260    ' MOD FCTN - Uses variables from
+1270    ' [QATN] - X=ATN((1-C0)*TAN(X))
+1280    ' Build string?
+1320    ' Print ASF
+1340    ' Math - Set ZZ and AN
+1350    ' ASIN - AN=ATN(SQR(1-XX*XX)/(XX-1E-9*(XX=0)))-PI*(XX<0)
+1360    ' ACOS - Set S, X, H, M0, (MOD Setup), V, X, (MOD Setup), V
+1370    ' X = ACOS(V)*RD, [QATN]

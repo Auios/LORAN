@@ -24,7 +24,7 @@ https://bitchin100.com/CloudT/#/M100Display
 ---
 
 1. Navigate to "BASIC"
-2. Load [the original LORAN code](/LORAN.bas) into the "cassette tape"
+2. Load [the original LORAN code](/programs/LORAN.bas) ([or newer version](/programs/LORAN2.bas)) into the "cassette tape"
 3. You can upload the file in two ways. You can upload the file using the upload file option or you can copy paste the file into the plain text box. Either method you will need to use the file's name. Use `CLOAD "LORAN"` to load the file from the "cassette" into the machine's memory.
 ![loran_upload.png](/images/loran_upload.png)
 4. Use `RUN` to run the program.
