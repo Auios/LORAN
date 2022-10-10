@@ -1,7 +1,6 @@
 'LORAN-C ROUTINE. REV 07-15-83. 1530 HOURS
 
 N9=15 ' N9 = Number of master stations
-
 C0=1/298.26
 A0=-1
 PI=4.*ATN(1)
@@ -13,7 +12,7 @@ GOTO @PRINT_OPTIONS
 
 @PRESS_ANY_KEY
     FOR C=1 TO 9
-    C$=INKEY$
+        C$=INKEY$
     NEXT C
     PRINT
     PRINT "Press any key to continue."
@@ -329,15 +328,15 @@ GOTO @PRINT_OPTIONS
     GOSUB @CHECK_GRI
     CLS
     FOR I=1 TO 2
-    PRINT "ITD FOR ";G$(I);
-    INPUT A
-    A=A+G(I)-D(I)-T(I)
-    IF ABS(A)<T(I) THEN GOTO @ITD_VALID_CONTINUE
-    PRINT "ITD NOT VALID FOR ";G$(I)
-    GOSUB @PRESS_ANY_KEY
+        PRINT "ITD FOR ";G$(I);
+        INPUT A
+        A=A+G(I)-D(I)-T(I)
+        IF ABS(A)<T(I) THEN GOTO @ITD_VALID_CONTINUE
+        PRINT "ITD NOT VALID FOR ";G$(I)
+        GOSUB @PRESS_ANY_KEY
 
 @ITD_VALID_CONTINUE
-    A(I)=A/21295.8736
+        A(I)=A/21295.8736
     NEXT I
     GOSUB @FIXING_ROUTINE
     GOSUB @PRESS_ANY_KEY
