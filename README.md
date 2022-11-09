@@ -76,3 +76,7 @@ Link: [ADA122499.pdf](/pdfs/ADA122499.pdf)
 * Name: *APPLICATION OF ADDITIONAL SECONDARY FACTORIS TO LORAN-C POSITIONS FOR HYDROGRAPHIC OPERATIONS*<br>
 Date: October 1982<br>
 Link: [ADA125620.pdf](/pdfs/ADA125620.pdf)
+
+* Name: *MIT RAD LAB SERIES*<br>
+Date: 1947 - 1953<br>
+Link: [Vol 4 LORAN](https://archive.org/details/mit-rad-lab-series-version-2/VOL_4_Loran)
