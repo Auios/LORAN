@@ -22,7 +22,8 @@ class Loran {
   }
 
   static Get2a(T, TB, codingDelay) {
-    let TS_TM = (T - Loran.GetDeltaT(TB, codingDelay)) / (1 + Loran.GetAValuesZero(T)[2]);
+    // TS - TM = (ITD - ∆t)/(1 + a2)
+    let TS_TM = (T - Loran.GetDeltaT(TB, codingDelay)) / (1 + Loran.GetAValuesZero()[2]);
     return this.Get2c(TS_TM);
   }
 

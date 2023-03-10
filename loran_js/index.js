@@ -1,9 +1,6 @@
-const DMS = require("geographiclib-dms");
-
 const Geo = require("./Geo");
 const Loran = require("./Loran");
 const Tower = require("./Tower");
-const Constants = require("./Constants");
 
 const { exec } = require("child_process");
 
@@ -36,17 +33,20 @@ let T2 = 25500;
 
 const zeta = 1; // Placeholder
 
-let TB1 = Loran.GetTB(m.pos, x.pos);
-let TB2 = Loran.GetTB(m.pos, w.pos);
+let TB1 = Loran.GetTB(m.pos, w.pos);
+let TB2 = Loran.GetTB(m.pos, x.pos);
 
 let twoC1 = Loran.Get2c(TB1);
 let twoC2 = Loran.Get2c(TB2);
 
-let twoA1 = Loran.Get2a(T1, TB1, x.codingDelay);
-let twoA2 = Loran.Get2a(T2, TB2, w.codingDelay);
+let twoA1 = Loran.Get2a(T1, TB1, w.codingDelay);
+let twoA2 = Loran.Get2a(T2, TB2, x.codingDelay);
 
-let A1 = zeta * Math.sin(twoA1);
-let A2 = zeta * Math.sin(twoA2);
+let A1 = Math.sin(twoA1);
+let A2 = Math.sin(twoA2);
+
+console.log(A1);
+console.log(A2);
 
 let B1 = Math.cos(twoA1) - Math.cos(twoC1);
 let B2 = Math.cos(twoA2) - Math.cos(twoC2);
@@ -54,8 +54,8 @@ let B2 = Math.cos(twoA2) - Math.cos(twoC2);
 let C1 = Math.sin(twoC1);
 let C2 = Math.sin(twoC2);
 
-let az1 = master2x.azi2 * d2r;
-let az2 = master2w.azi2 * d2r;
+let az1 = master2w.azi2 * d2r;
+let az2 = master2x.azi2 * d2r;
 
 let C = B1 * C2 * Math.cos(az2) - B2 * C1 * Math.cos(az1);
 let S = B1 * C2 * Math.sin(az2) - B2 * C1 * Math.sin(az1);
@@ -77,11 +77,7 @@ console.log(`alpha: ${alpha} (${alpha * r2d})`);
 console.log(`    r: ${r} (${r * r2d})`);
 console.log(`result LL: ${result.lat2}, ${result.lon2}`);
 console.log("actual LL: 43.7666667, -67");
-//console.log(`Map: https://www.google.com/maps/dir/${result.lat1},${result.lon1}/43.7666667,-67/${result.lat2},${result.lon2}/`);
-
-exec(
-  `"C:\\Program Files\\Mozilla Firefox\\firefox.exe" "https://www.google.com/maps/dir/${result.lat1},${result.lon1}/43.7666667,-67/${result.lat2},${result.lon2}/" -private`
-);
+console.log(`Map: https://www.google.com/maps/dir/${result.lat1},${result.lon1}/43.7666667,-67/${result.lat2},${result.lon2}/`);
 
 /*
 {
