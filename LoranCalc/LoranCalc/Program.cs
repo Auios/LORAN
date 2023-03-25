@@ -1,7 +1,5 @@
 ﻿using GeographicLib;
 using LoranCalc;
-using static System.Net.WebRequestMethods;
-using System;
 
 public static class Program {
     public static double d2r = Math.PI / 180.0;
@@ -78,7 +76,9 @@ public static class Program {
         double r = Math.Atan2(B1, C1 * Math.Cos(alpha - az1) + A1); // i = 1
 
         // Get position???
-        Position position = Geo.Direct(gri["x"].pos, alpha * r2d, r * r2d);
+        Console.WriteLine(r);
+        Console.WriteLine(alpha);
+        Position position = Geo.Direct(gri["m"].pos, alpha * r2d, r * r2d);
 
         Console.WriteLine($"Map: https://www.google.com/maps/dir/{gri["m"].pos.lat},{gri["m"].pos.lon}/43.7666667,-67/{position.lat},{position.lon}/");
     }

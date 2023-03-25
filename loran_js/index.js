@@ -31,22 +31,21 @@ let T2 = 25500;
 //T1 -= Loran.SecondaryPhaseCorrection(T1);
 //T2 -= Loran.SecondaryPhaseCorrection(T2);
 
-const zeta = 1; // Placeholder
+const zeta = -1;
 
 let TB1 = Loran.GetTB(m.pos, w.pos);
 let TB2 = Loran.GetTB(m.pos, x.pos);
+console.log(TB1);
+console.log(TB2);
 
 let twoC1 = Loran.Get2c(TB1);
 let twoC2 = Loran.Get2c(TB2);
 
-let twoA1 = Loran.Get2a(T1, TB1, w.codingDelay);
-let twoA2 = Loran.Get2a(T2, TB2, x.codingDelay);
+let twoA1 = Loran.Get2a(T2, TB1, w.codingDelay);
+let twoA2 = Loran.Get2a(T1, TB2, x.codingDelay);
 
-let A1 = Math.sin(twoA1);
-let A2 = Math.sin(twoA2);
-
-console.log(A1);
-console.log(A2);
+let A1 = zeta * Math.sin(twoA1);
+let A2 = zeta * Math.sin(twoA2);
 
 let B1 = Math.cos(twoA1) - Math.cos(twoC1);
 let B2 = Math.cos(twoA2) - Math.cos(twoC2);
@@ -77,7 +76,9 @@ console.log(`alpha: ${alpha} (${alpha * r2d})`);
 console.log(`    r: ${r} (${r * r2d})`);
 console.log(`result LL: ${result.lat2}, ${result.lon2}`);
 console.log("actual LL: 43.7666667, -67");
-console.log(`Map: https://www.google.com/maps/dir/${result.lat1},${result.lon1}/43.7666667,-67/${result.lat2},${result.lon2}/`);
+//console.log(`Map: https://www.google.com/maps/dir/${result.lat1},${result.lon1}/43.7666667,-67/${result.lat2},${result.lon2}/`);
+
+console.log(`https://www.google.com/maps/dir/${result.lat1},${result.lon1}/43.7666667,-67/${result.lat2},${result.lon2}/`);
 
 /*
 {

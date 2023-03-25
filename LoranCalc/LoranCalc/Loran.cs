@@ -22,7 +22,7 @@ public static class Loran {
     }
 
     public static double GetDeltaT(double masterSlaveTime, double codingDelay) {
-        return (masterSlaveTime + SecondaryPhaseCorrection(masterSlaveTime)) + codingDelay;
+        return masterSlaveTime + SecondaryPhaseCorrection(masterSlaveTime) + codingDelay;
     }
 
     public static double GetTB(Tower master, Tower slave) {
