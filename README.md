@@ -1,4 +1,4 @@
-# LoranC
+# LORAN-C
 
 ## What is this?
 >The Loran system is a radio aid to navigation which utilizes<br>
